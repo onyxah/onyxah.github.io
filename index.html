@@ -19,13 +19,15 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            padding: 20px;
+            padding: 10px;
         }
 
         .image-container {
             position: relative;
-            width: 800px;
-            height: 800px;
+            width: 100%;
+            max-width: 800px;
+            height: auto;
+            aspect-ratio: 1/1;
             border-radius: 10px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
             overflow: hidden;
@@ -43,17 +45,24 @@
 
         .countdown-overlay {
             position: absolute;
-            bottom: 200px;
-            right: 60px;
+            bottom: 25%;
+            right: 7.5%;
             z-index: 10;
-            font-size: 120px;
+            font-size: 15vw;
             font-weight: 900;
             color: #D32F2F;
-            text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.6),
-                -2px -2px 4px rgba(255, 255, 255, 0.3);
-            letter-spacing: -5px;
+            text-shadow: 0.5vw 0.5vw 1vw rgba(0, 0, 0, 0.6),
+                -0.25vw -0.25vw 0.5vw rgba(255, 255, 255, 0.3);
+            letter-spacing: -0.5vw;
             animation: pulse 2s ease-in-out infinite;
             user-select: none;
+        }
+
+        @media screen and (min-width: 800px) {
+            .countdown-overlay {
+                font-size: 120px;
+                letter-spacing: -5px;
+            }
         }
 
         @keyframes pulse {
